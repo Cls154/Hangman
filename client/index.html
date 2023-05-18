@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hangman</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://kit.fontawesome.com/6cda857256.js" crossorigin="anonymous"></script>
+
+<!-- Sidebar -->
+<section class="status">
+  <button id="openBar" class="btnBarStyle audioCrl sliderCloseState"><i class="fa fa-sliders"></i></button>
+  <h1 id="optionTitle">Hangman</h1>
+</section>
+
+<nav id="sidebar" class="closeState">
+  <header>Options</header>
+  <div class="navOptions">
+    <input type="radio" name="options" id="showHangman" class="displays audioCrl none" checked>
+    <label for="showHangman" class="options selected">
+      <i class="fas fa-gamepad">
+        <span>Hangman</span>
+      </i>
+    </label>
+    <input type="radio" name="options" id="showCat" class="displays audioCrl none">
+    <label for="showCat" class="options">
+      <i class="fas fa-folder">
+        <span>Categories</span>
+      </i>
+    </label>
+    <input type="radio" name="options" id="showSettings" class="displays audioCrl none">
+    <label for="showSettings" class="options">
+      <i class="fas fa-user-cog">
+        <span>Settings</span>
+      </i>
+    </label>
+  </div>
+  <button id="closeBar" class="btnBarStyle audioCrl sliderCloseState"><i class="fa fa-trash"></i></button>
+</nav>
+
+<!-- Main Hangman Game -->
+<main id="gameContainer" class="wrapper">
+  <output id="wordOut"></output>
+  <section class="btnWrap">
+    <div class="vk audioCrl" id="vowelPos"></div>
+    <div class="vk audioCrl" id="consonantPos"></div>
+  </section>
+  <p id="hintOut"></p>
+  <section class="svgWrap">
+    <svg>
+      <line x1="25%" y1="90%" x2="75%" y2="90%" stroke="black" stroke-width="4" class="hm hide"/>
+      <line x1="35%" y1="90%" x2="35%" y2="10%" stroke="black" stroke-width="4" class="hm hide"/>
+      <line x1="35%" y1="10%" x2="55%" y2="10%" stroke="black" stroke-width="4" class="hm hide"/>
+      <line x1="55%" y1="10%" x2="55%" y2="20%" stroke="black" stroke-width="4" class="hm hide"/>
+      <line x1="55%" y1="30%" x2="55%" y2="50%" stroke="red" stroke-width="1.5" class="hm hide"/>   
+      <line x1="55%" y1="35%" x2="50%" y2="48%" stroke="red" stroke-width="1.5" class="hm hide"/>
+      <line x1="55%" y1="35%" x2="60%" y2="48%" stroke="red" stroke-width="1.5" class="hm hide"/>
+      <line x1="55%" y1="50%" x2="50%" y2="68%" stroke="red" stroke-width="1.5" class="hm hide"/>
+      <line x1="55%" y1="50%" x2="60%" y2="68%" stroke="red" stroke-width="1.5" class="hm hide"/>
+      <circle cx="55%" cy="25%" r="7%" stroke="red" stroke-width="1.5" fill="white" class="hm hide"/>
+    </svg>
+  </section>
+	<p id="winConOut">Start game to display remaining mistakes</p>
+	<button id="playAgain" class="extraBtns audioCrl">Play Again</button>
+  <button id="hint" class="extraBtns audioCrl">Hint</button>
+</main>
+
+<!-- Categories Section -->
+<section id="catContainer" class="wrapper hide">
+  <div class="wrap">
+    <input type="radio" name="cat" class="cat audioCrl none" id="catAll" checked>
+    <label for="catAll" class="btnStyle selected">All</label>
+
+    <input type="radio" name="cat" class="cat audioCrl none" id="catGame">
+    <label for="catGame" class="btnStyle">Games</label>
+
+    <input type="radio" name="cat" class="cat audioCrl none" id="catCountry">
+    <label for="catCountry" class="btnStyle">Countries</label>
+
+    <input type="radio" name="cat" class="cat audioCrl none" id="catSocials">
+    <label for="catSocials" class="btnStyle">Social Media</label>
+
+    <input type="radio" name="cat" class="cat audioCrl none" id="catHard">
+    <label for="catHard" class="btnStyle">Hard Words</label>
+  </div>
+</section>
+
+<!-- Settings Section -->
+<section id="settingsContainer" class="wrapper hide">
+  <div class="wrap">
+    <input type="checkbox" class="set audioCrl none" id="toggleSounds" checked>
+    <label for="toggleSounds" class="btnStyle selected">Click Audio</label>
+
+    <input type="checkbox" class="set audioCrl none" id="toggleKeyboard">
+    <label for="toggleKeyboard" class="btnStyle">Keyboard</label>
+  </div>
+</section>
+
+<script type="module" src="main.mjs"></script>
+</html>
